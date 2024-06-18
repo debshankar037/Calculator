@@ -19,45 +19,56 @@ let percentage=document.getElementById("percentage");
 let factorial=document.getElementById("factorial");
 let e=document.getElementById("e");
 
+let sound=new Audio("click.wav");
+
 fraction.addEventListener("click",(event)=>{
     input=display.value;
     if(input=="0")
         input='';
     input="1/"+input;
     display.value=input;
+    let sound=new Audio("click.wav");
+    sound.play();
 })
 
 root.addEventListener("click",(event)=>{
     display.value="root("
     flag=4;
+    sound.play();
 })
 
 log.addEventListener("click",(event)=>{
     display.value="log("
     flag=5;
+    sound.play();
 })
 
 ln.addEventListener("click",(event)=>{
     display.value="ln("
     flag=6;
+    sound.play();
 })
 
 percentage.addEventListener("click",(event)=>{
     display.value=display.value+"%";
     flag=7;
+    sound.play();
 })
 
 factorial.addEventListener("click",(event)=>{
     display.value=display.value+"!";
     flag=8;
+    sound.play();
 })
 
 pi.addEventListener("click",(event)=>{
     display.value=display.value+"3.14";
+    sound.play();
 })
 
 e.addEventListener("click",(event)=>{
     display.value=display.value+"2.72";
+    sound.play();
 })
 
 
@@ -75,6 +86,7 @@ second.addEventListener("click",(event)=>{
         cos.innerText="cos";
         tan.innerText="tan";
     }
+    sound.play();
 })
 
 let flag=0;
@@ -87,6 +99,7 @@ deg.addEventListener("click",(event)=>{
         deg.innerText="rad"
     else
         deg.innerText="deg"
+    sound.play();
 })
 
 for(let i=0;i<number_button.length;i++)
@@ -98,14 +111,17 @@ for(let i=0;i<number_button.length;i++)
             input=display.value;
         input=input+event.target.attributes.id.nodeValue;
         display.value=input;
+        sound.play();
     })
 }
 
 all_clear.addEventListener("click",(event)=>{
+    sound.play();
     display.value="0";
 })
 
 clear_last.addEventListener("click",(event)=>{
+    sound.play();
     let input=display.value;
     let newinput='';
     for(let i=0;i<input.length-1;i++)
@@ -227,6 +243,7 @@ function isNumeric(token){
 }
 
 answer.addEventListener("click",(event)=>{
+    sound.play();
     let ans=0;
     if(flag!=0)
     {
@@ -327,17 +344,20 @@ answer.addEventListener("click",(event)=>{
 
 square.addEventListener("click",(event)=>{
     let input=display.value;
+    sound.play();
     input=input+"^2";
     display.value=input;
 })
 
 exponential.addEventListener("click",(event)=>{
+    sound.play();
     let input=display.value;
     input=input+"^";
     display.value=input;
 })
 
 sin.addEventListener("click",(event)=>{
+    sound.play();
     if(sin.innerText=="sin"){
         let input="Sin(";
         flag=1;
@@ -351,6 +371,7 @@ sin.addEventListener("click",(event)=>{
 })
 
 cos.addEventListener("click",(event)=>{
+    sound.play();
     if(cos.innerText=="cos"){
         let input="Cos(";
         flag=2;
@@ -364,6 +385,7 @@ cos.addEventListener("click",(event)=>{
 })
 
 tan.addEventListener("click",(event)=>{
+    
     if(tan.innerText=="tan"){
         let input="Tan(";
         flag=3;
@@ -374,4 +396,5 @@ tan.addEventListener("click",(event)=>{
         flag=3;
         display.value=input;
     }
+    sound.play();
 })
