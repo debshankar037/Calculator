@@ -153,7 +153,7 @@ function applyOp(a, b, op) {
         case '-': return a - b;
         case '*': return a * b;
         case '/': return Math.floor(a / b); // Ensuring integer division
-        case '^': return Math.floor(Math.pow(b,a)); 
+        case '^': return Math.floor(Math.pow(a,b)); 
     }
 }
 
